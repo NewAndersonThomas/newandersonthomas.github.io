@@ -1,8 +1,30 @@
-title: Just the Docs Template
-description: A starter template for a Jeykll site using the Just the Docs theme!
-theme: just-the-docs
+title: Anderson's Docs
+description: Something Special
+theme: just-the-docs # using .github\workflows\pages.ymll defined action
+# remote_theme: just-the-docs/just-the-docs # uncomment when using github's action of  pages-builld-deployment 
 
-url: https://just-the-docs.github.io
+url: https://newandersonthomas.github.io
+
+permalink: pretty
 
 aux_links:
-  Template Repository: https://github.com/just-the-docs/just-the-docs-template
+   My GitHub: https://github.com/newandersonthomas
+# Makes Aux links open in a new tab. Default is false
+aux_links_new_tab: true
+# External navigation links
+nav_external_links:
+  - title: Anderson's Github 
+    url: https://github.com/newandersonthomas
+
+# Footer content
+# appears at the bottom of every page's main content
+
+# Back to top link
+back_to_top: true
+back_to_top_text: "Back to top"
+
+footer_content: "Copyright &copy; 2023 Grissom."
+
+# Footer last edited timestamp
+last_edit_timestamp: true # show or hide edit time - page must have `last_modified_date` defined in the frontmatter
+last_edit_time_format: "%Y-%m-%d %R"  #"%b %e %Y at %I:%M %p" # uses ruby's time format: https://ruby-doc.org/stdlib-2.7.0/libdoc/time/rdoc/Time.html
