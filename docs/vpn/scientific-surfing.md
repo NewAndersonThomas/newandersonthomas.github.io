@@ -1,9 +1,9 @@
 ---
 layout: default
-title: 科学上网
+title: Scientific Internet Access
 parent: VPN
 nav_order: 2
-last_modified_date:   2023-05-23 17:09:29 +0800
+last_modified_date:   2024-11-27 11:49:29 +0800
 ---
 
 <details  markdown="block">
@@ -25,21 +25,21 @@ last_modified_date:   2023-05-23 17:09:29 +0800
 
 </details>
 
-# 科学上网
+# Scientific Internet Access
 ---
 ## OpenVPN
-### 安装
-#### 服务端<a id="openvpn-server"></a>
-- 参考 [https://github.com/angristan/openvpn-install](https://github.com/angristan/openvpn-install)
-- 全部默认即可
-- vpn 会安装虚拟网卡接管全部流量，如果不需要全部走vpn, 需要配置route, 可以在客户端也可以在服务端配置,但最终连上服务端时，服务端会把 push "route ip mask " 这些配置发送给客户端配置文件起效, 同时需要注释掉配置文件里的 ```push "redirect_gateway def1 bypass-dhcp" ```
-- 防火墙需要开放 1194/udp, 1194/tcp
-#### 客户端<a id="openvpn-client"></a>
-- 建议使用最新版的 [OpenVPN GUI](https://openvpn.net/community-downloads/)
-- 安装后在网络适配器里会多出 OpenVPN Data Channel Offload， 旧版本(2.4)多出 本地连接2, 而且默认都有红叉(Network cable unplugged)，需要等连上服务端后才会变为可用
-- 配置文件**需要去掉 ```setenv opt block-outside-dns```**， 否则会导致未走 vpn 的流量全部被block掉，而无法访问网络
-- 配置route ```route 10.0.0.0 255.255.255.0 vpn_gateway```, 所有 10.*开头的ip都会走 vpn gateway, 该配置可以直接写死在客户端配置文件，也可以写在服务端 ```push "route 10.0.0.0 255.255.255.0 vpn_gateway"```
-- 客户端会先将域名解析成 ip 后，才会走 vpn, 所以通过 vpn 的http 请求已是通过 DNS 解析后的 ip, vpn 只是服务器和客户端之间的一条流量通道，它不是代理，它和 shadowsocks, v2ray 这些代理有本质区别，这些代理是直接代理所请求url的服务器，vpn 查看浏览器的 remote-ip url原服务器的ip, 但代理的是代理的ip，一般是 127.0.0.1, 它们共同点都是加密通信，访问网络最终由服务器端的网络负责。 
+### Install
+#### Server<a id="openvpn-server"></a>
+- Reference  [https://github.com/angristan/openvpn-install](https://github.com/angristan/openvpn-install)
+- All defaults
+- VPN will install a virtual network card to take over all traffic. If you don't want all traffic to go through VPN, you need to configure the route. You can configure it on the client or on the server. But when you finally connect to the server, the server will push "route ip mask" to the client configuration file to take effect. At the same time, you need to comment out the configuration in the configuration file.push "redirect_gateway def1 bypass-dhcp"
+- The firewall needs to open 1194/udp, 1194/tcp
+#### Client<a id="openvpn-client"></a>
+- It is recommended to use the latest version of [OpenVPN GUI](https://openvpn.net/community-downloads/)
+- After installation, there will be an additional OpenVPN Data Channel Offload in the network adapter. The old version (2.4) has an additional Local Area Connection 2, and by default there is a red cross (Network cable unplugged). You need to wait until you connect to the server before it becomes available.
+- The configuration file **needs to be removed ```setenv opt block-outside-dns```**， otherwise all traffic that does not go through the VPN will be blocked and the network will not be accessible
+- Configure route```route 10.0.0.0 255.255.255.0 vpn_gateway```, all IPs starting with 10.* will go through the VPN gateway. This configuration can be written directly in the client configuration file or in the server. ```push "route 10.0.0.0 255.255.255.0 vpn_gateway"```
+- The client will first resolve the domain name into an IP before going through the VPN, so the http request through the VPN is the IP resolved by DNS. The VPN is just a traffic channel between the server and the client, it is not a proxy. It is fundamentally different from proxies such as shadowsocks and v2ray, which directly proxy the server of the requested URL. The VPN checks the IP of the original server of the remote-ip URL of the browser, but the proxy is the IP of the proxy, which is usually 127.0.0.1. What they have in common is that they are encrypted communications, and the server-side network is ultimately responsible for accessing the network. 
 
 ---
 ## 代理

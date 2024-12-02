@@ -1,0 +1,70 @@
+details{
+    display: block;
+    position: fixed;
+    right: 0;
+    z-index: 9;
+    max-width: 350px;
+}
+
+
+h1,
+.text-beta,
+#toctitle {
+  font-size: 1.55rem !important;
+
+  @include mq(sm) {
+    font-size: 1.65rem !important;
+  }
+  font-weight: 600;
+}
+
+h2,
+.text-beta,
+#toctitle {
+  // @include fs-6;
+  font-size: 1.35rem !important;
+
+  @include mq(sm) {
+    font-size: 1.45rem !important;
+  }
+
+  font-weight: 500;
+}
+
+h3,
+.text-gamma {
+  //@include fs-5;
+  font-size: 1.15rem !important;
+
+  @include mq(sm) {
+    font-size: 1.25rem !important;
+  }
+  font-weight: 500;
+}
+
+h4,
+.text-delta {
+  // @include fs-5;
+  // @include fs-2;
+
+  font-size: 1.05rem !important;
+
+  @include mq(sm) {
+    font-size: 1.15rem !important;
+  }
+
+  font-weight: 400;
+  text-transform:none;
+  letter-spacing: 0.1em;
+}
+
+
+h5,
+.text-gamma {
+  font-size: 1rem !important;
+
+  @include mq(sm) {
+    font-size: 1rem !important;
+  }
+  font-weight: 400;
+}
