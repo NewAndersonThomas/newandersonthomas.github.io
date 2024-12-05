@@ -20,3 +20,17 @@ last_modified_date:   2024-12-02 23:41:18
 1. mirror
    - Linux and Windows both have the some IP address
    - some Linux apps likes k8s cannot directly access with `localhost` from Windows 
+## wslconfig
+```bash
+[wsl2]
+autoMemoryReclaim=gradual  # gradual  | dropcache | disabled
+networkingMode=NAT
+dnsTunneling=true
+firewall=false
+# autoProxy=true
+localhostForwarding=true
+hostAddressLoopback=true
+nestedVirtualization=false
+debugConsole=false
+dnsProxy=true
+```
