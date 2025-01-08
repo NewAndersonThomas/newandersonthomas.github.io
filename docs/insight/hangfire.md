@@ -24,7 +24,7 @@ last_modified_date:   2025-01-08 22:55:01
 
 # Issue
 1. Sometimes worker thread stuck unexpected.
-1. Dashboard too simple to manage the job, like lack of add job, batch delete job, and find job.
-1. Need to complicated configuration to enable auto-restart after recyle application for asp.net web.
+1. Dashboard too simple to manage the job, like lack adding job, batch deleting job, and finding job.
+1. Configuration needed to enable auto-restart hangfire after recyling application pool for asp.net web.
 1. DisableConcurrencyExecution only work on class's Attribute, for dynamic job, need use filter with dynamic perperty to prevent concurrency execution.
 1. The last execution time always show previous job interval instread of previous success or failed time, if the last job cancel, it will shows cancel in dashboard.
